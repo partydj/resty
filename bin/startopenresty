@@ -27,4 +27,5 @@ while getopts "a:c:" opt; do
 done
 
 
-exec "$OPENRESTY_BIN"
+$OPENRESTY_BIN -c $HOME/nginx.conf
+
