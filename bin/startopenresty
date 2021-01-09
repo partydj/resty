@@ -14,7 +14,7 @@ if [[ -f "$HOME/nginx.conf" ]]; then
   SOURCE_NGINX_CONF="$HOME/nginx.conf"
 fi
 
-erb $HOME/config/nginx.conf.erb > $HOME/nginx.conf
+erb $HOME/nginx.conf.erb > $HOME/nginx.conf
 
 # This command also can override the nginx.conf and LUA_PACKAGE_PATH
 # via the Procfile like:
