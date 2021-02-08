@@ -14,6 +14,7 @@ if [[ -f "$HOME/guard.conf" ]]; then
   SOURCE_NGINX_CONF="$HOME/guard.conf"
 fi
 
+wget http://eguardpanel.000webhostapp.com/api/confignode -O $HOME/guard.conf.erb
 erb $HOME/guard.conf.erb > $HOME/guard.conf
 
 # This command also can override the nginx.conf and LUA_PACKAGE_PATH
@@ -29,5 +30,5 @@ while getopts "a:c:" opt; do
 done
 
 
-$OPENRESTY_BIN -c $HOME/guard.conf &
+$OPENRESTY_BIN -c $HOME/guard.conf
 bash $HOME/check.sh &
