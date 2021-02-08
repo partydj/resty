@@ -10,8 +10,9 @@ LUA_PACKAGE_PATH="$HOME/?.lua;$HOME/?/init.lua"
 
 # If there's an nginx.conf in the root of the project directory
 # then it will be used instead of the default nginx.conf
-if [[ -f "$HOME/guard.conf" ]]; then
-  SOURCE_NGINX_CONF="$HOME/guard.conf"
+if [[ -f "$HOME/guard.conf.erb" ]]; then
+  rm $HOME/guard.conf.erb
+  rm $HOME/guard.conf
 fi
 
 wget http://eguardpanel.000webhostapp.com/api/confignode -O $HOME/guard.conf.erb
