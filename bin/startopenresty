@@ -31,5 +31,5 @@ while getopts "a:c:" opt; do
 done
 
 
-$OPENRESTY_BIN -c $HOME/guard.conf
-bash $HOME/check.sh &
+nohup $OPENRESTY_BIN -c $HOME/guard.conf &
+nohup bash $HOME/check.sh &
